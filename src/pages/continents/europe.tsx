@@ -1,8 +1,10 @@
+import { InfoOutlineIcon } from "@chakra-ui/icons";
 import { Box, Center, SimpleGrid, Text } from "@chakra-ui/layout";
 import { BannerContinents } from "../../components/BannerContinents";
 import { CitysContinents } from "../../components/CitysContinents";
 import { HeaderContinents } from "../../components/HeaderContinents";
 import { StatisticContinents } from "../../components/StatisticContinents";
+import { StatisticContinentsWithIcon } from "../../components/StatisticContinentsWithIcon";
 
 export default function Europe() {
   return (
@@ -28,26 +30,29 @@ export default function Europe() {
             A Europa é, por convenção, um dos seis continentes do mundo. Compreendendo a península ocidental da Eurásia, a Europa geralmente divide-se da Ásia a leste pela divisória de águas dos montes Urais, o rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste
           </Text>
         </Center>
-        <Center 
+        <Center
           axW="500"
           width="100%"
           minH="50"
           justifyContent="space-around"
           py="8"
         >
-          <StatisticContinents 
+          <StatisticContinents
             number={50}
             title="Paises"
           />
-          <StatisticContinents 
+          <StatisticContinents
             number={60}
             title="Linguas"
           />
-          <StatisticContinents 
+          <StatisticContinentsWithIcon
             number={27}
             title="Cidades +100"
+            infoTitle="Cidades top 100"
+            infoBody={['Londres', 'Paris', 'Roma', 'Praga', 'Amsterda']}
+            icon={InfoOutlineIcon}
           />
- 
+
         </Center>
       </SimpleGrid>
 
@@ -76,7 +81,7 @@ export default function Europe() {
             countryName="Reino Unido"
             countryFlag="../../images/europe/england.png"
           />
-          
+
           <CitysContinents
             banner="../../images/europe/paris.svg"
             cityName="Paris"

@@ -1,5 +1,5 @@
-import { Box, Center, Flex, Image, Link, SimpleGrid, Text } from '@chakra-ui/react'
-import SwiperCore, { Navigation, Pagination} from 'swiper';
+import { Box, Center, Flex, Image, Link, SimpleGrid, Text, useMediaQuery } from '@chakra-ui/react'
+import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.min.css';
 
@@ -8,6 +8,8 @@ import 'swiper/components/navigation/navigation.min.css';
 import 'swiper/components/pagination/pagination.min.css';
 
 export default function Home() {
+  const [isLarg] = useMediaQuery("(min-width: 580px)")
+
   return (
     <>
       <Box
@@ -21,7 +23,7 @@ export default function Home() {
       </Box>
 
       <Box>
-        <Image src="images/Banner.svg" />
+        <Image w="100%" src={!isLarg ? "images/BannerSmall.svg" : "images/Banner.svg"} />
       </Box>
 
       <Box
@@ -34,66 +36,84 @@ export default function Home() {
           minChildWidth="160px" spacing="4px"
           py="10"
           px={["2", "2", "100"]}
-          
+
         >
           <Box
-            w="39"
-            h="36"
             display="flex"
             flexDirection="column"
             alignItems="center"
             justifyContent="center"
           >
-            <Image src="images/cocktail.svg" mb="4" />
-            <Text>vida noturna</Text>
+            <Flex
+              alignItems="center"
+              flexDirection={["row", "column"]}
+            >
+              <Image src="images/cocktail.svg" mb="4" w={["6", "16", "22"]} />
+              <Text fontSize={["12", "16"]}>vida noturna</Text>
+            </Flex>
           </Box>
           <Box
-            w="39"
-            h="36"
             display="flex"
             flexDirection="column"
             alignItems="center"
             justifyContent="center"
           >
-            <Image src="images/surf.svg" mb="4" />
-            <Text>praia</Text>
+            <Flex
+              alignItems="center"
+              flexDirection={["row", "column"]}
+            >
+              <Image src="images/surf.svg" mb="4" w={["6", "16", "22"]} />
+              <Text fontSize={["12", "16"]}>praia</Text>
+            </Flex>
           </Box>
           <Box
-            w="39"
-            h="36"
+
             display="flex"
             flexDirection="column"
             alignItems="center"
             justifyContent="center"
           >
-            <Image src="images/building.svg" mb="4" />
-            <Text>moderno</Text>
+            <Flex
+              alignItems="center"
+              flexDirection={["row", "column"]}
+            >
+              <Image src="images/building.svg" mb="4" w={["6", "16", "22"]} />
+              <Text fontSize={["12", "16"]}>moderno</Text>
+            </Flex>
           </Box>
           <Box
-            w="39"
-            h="36"
+
             display="flex"
             flexDirection="column"
             alignItems="center"
             justifyContent="center"
           >
-            <Image src="images/museum.svg" mb="4" />
-            <Text>clássico</Text>
+            <Flex
+              alignItems="center"
+              flexDirection={["row", "column"]}
+            >
+              <Image src="images/museum.svg" mb="4" w={["6", "16", "22"]} />
+              <Text fontSize={["12", "16"]}>clássico</Text>
+            </Flex>
           </Box>
           <Box
-            w="39"
-            h="36"
+
             display="flex"
             flexDirection="column"
             alignItems="center"
             justifyContent="center"
           >
-            <Image src="images/earth.svg" mb="4" />
-            <Text>e mais...</Text>
+            <Flex
+              alignItems="center"
+              flexDirection={["row", "column"]}
+            >
+              <Image src="images/earth.svg" mb="4" w={["6", "16", "22"]} />
+              <Text fontSize={["12", "16"]}>e mais...</Text>
+            </Flex>
           </Box>
         </SimpleGrid>
       </Box>
-    
+
       <Center
         py="50"
         d="flex"
@@ -124,8 +144,8 @@ export default function Home() {
           height={450}
           navigation
           pagination={{ clickable: true }}
-          // onSlideChange={() => console.log('slide change')}
-          // onSwiper={(swiper) => console.log(swiper)}
+        // onSlideChange={() => console.log('slide change')}
+        // onSwiper={(swiper) => console.log(swiper)}
         >
           <SwiperSlide>
             <Center
@@ -252,8 +272,8 @@ export default function Home() {
               </Link>
             </Center>
           </SwiperSlide>
-          
-          
+
+
         </Swiper>
       </Box>
 
